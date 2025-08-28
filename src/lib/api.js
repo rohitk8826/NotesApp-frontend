@@ -1,9 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL:
-    import.meta.env.VITE_API_BASE_URL ||
-    "https://mern-notes-backend-j9dn.onrender.com/api",
+  baseURL: import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/api",
   withCredentials: true,
 });
 

@@ -43,9 +43,7 @@ export default function Notes() {
   const fetchNotes = async () => {
     setFetching(true);
     try {
-      const res = await api.get(
-        "https://notes-app-frontend-black.vercel.app/notes"
-      );
+      const res = await api.get("/notes");
       setNotes(res.data || []);
     } catch (err) {
       toast.error(err.message);

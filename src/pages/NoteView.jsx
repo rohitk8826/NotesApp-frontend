@@ -26,9 +26,7 @@ export default function NoteView() {
   const fetchNote = async () => {
     setFetching(true);
     try {
-      const res = await api.get(
-        `https://notes-app-frontend-black.vercel.app/notes/${id}`
-      );
+      const res = await api.get(`/notes/${id}`);
       setNote(res.data || null);
     } catch (err) {
       toast.error(err.message || "Failed to fetch note");

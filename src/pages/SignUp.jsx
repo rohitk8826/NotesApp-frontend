@@ -24,14 +24,11 @@ export default function SignUp() {
     setLoading(true);
 
     try {
-      const { data } = await api.post(
-        "https://notes-app-frontend-black.vercel.app/auth/signup",
-        {
-          name,
-          email,
-          password,
-        }
-      );
+      const { data } = await api.post("/auth/signup", {
+        name,
+        email,
+        password,
+      });
       login(data); // ✅ AuthContext handles token & storage
       navigate("/notes");
     } catch (err) {

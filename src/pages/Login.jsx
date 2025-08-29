@@ -23,10 +23,7 @@ export default function Login() {
     setLoading(true);
 
     try {
-      const { data } = await api.post(
-        "https://notes-app-frontend-black.vercel.app/auth/login",
-        { email, password }
-      );
+      const { data } = await api.post("/auth/login", { email, password });
       login(data); // ✅ AuthContext now handles token & localStorage
       navigate("/notes");
     } catch (err) {

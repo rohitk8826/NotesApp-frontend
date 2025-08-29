@@ -23,7 +23,10 @@ export default function Login() {
     setLoading(true);
 
     try {
-      const { data } = await api.post("/auth/login", { email, password });
+      const { data } = await api.post(
+        `${import.meta.env.VITE_API_URL}/auth/login`,
+        { email, password }
+      );
       login(data); // ✅ AuthContext now handles token & localStorage
       navigate("/notes");
     } catch (err) {

@@ -14,7 +14,10 @@ export default function AddNote() {
   const handleSubmit = async (form) => {
     setLoading(true);
     try {
-      await api.post("/notes", form); // interceptor unwraps data if backend returns {success,data}
+      await api.post(
+        "https://notes-app-frontend-black.vercel.app/notes",
+        form
+      ); // interceptor unwraps data if backend returns {success,data}
       toast.success("Note added successfully!");
       navigate("/notes");
     } catch (err) {

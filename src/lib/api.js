@@ -1,12 +1,10 @@
-import axios from "axios";
-
+// src/lib/api.js
 import axios from "axios";
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL, // e.g. "https://mern-notes-app-8059.onrender.com/api"
-  withCredentials: true,
+  withCredentials: true, // only needed if using cookies
 });
-
 
 // Response interceptor: unwrap { success, data } automatically
 api.interceptors.response.use(

@@ -10,7 +10,6 @@ if (typeof window !== "undefined") {
 
 const api = axios.create({
   baseURL, // e.g. "https://mern-notes-app-8059.onrender.com/api"
-  withCredentials: true, // only needed if using cookies
 });
 
 // Response interceptor: unwrap { success, data } automatically
